@@ -180,7 +180,7 @@ public abstract class KylinConfigBase implements Serializable {
     }
 
     protected String getOptional(String prop, String dft) {
-
+        ConfigTracker.markParamAsUsed(prop);
         final String property = System.getProperty(prop);
         return property != null ? getSubstitutor().replace(property, System.getenv())
                 : getSubstitutor().replace(properties.getProperty(prop, dft), System.getenv());
@@ -203,6 +203,7 @@ public abstract class KylinConfigBase implements Serializable {
                 filteredProperties.put(entry.getKey(), sub.replace((String) entry.getValue()));
             }
         }
+        filteredProperties.stringPropertyNames().forEach(key -> ConfigTracker.markParamAsUsed(key));
         return filteredProperties;
     }
 
@@ -225,6 +226,7 @@ public abstract class KylinConfigBase implements Serializable {
             String key = (String) entry.getKey();
             if (key.startsWith(prefix)) {
                 result.put(key.substring(prefix.length()), (String) entry.getValue());
+                ConfigTracker.markParamAsUsed(key.substring(prefix.length()));
             }
         }
         return result;
@@ -268,6 +270,7 @@ public abstract class KylinConfigBase implements Serializable {
     final protected void reloadKylinConfig(Properties properties) {
         this.properties = BCC.check(properties);
         setProperty("kylin.metadata.url.identifier", getMetadataUrlPrefix());
+        ConfigTracker.injectConfig((arg1, arg2) -> properties.put(arg1, (String) arg2));
     }
 
     private Map<Integer, String> convertKeyToInteger(Map<String, String> map) {

@@ -18,6 +18,9 @@
 
 package org.apache.kylin.common;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit4Runner;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
@@ -25,6 +28,7 @@ import java.util.Properties;
 import org.apache.kylin.common.KylinConfig.SetAndUnsetThreadLocalConfig;
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 
 import org.apache.kylin.shaded.com.google.common.collect.Maps;
 
@@ -34,7 +38,8 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
-
+@RunWith(CTestJUnit4Runner.class)
+@CTestClass
 public class KylinConfigTest extends HotLoadKylinPropertiesTestCase {
 
     @Test
