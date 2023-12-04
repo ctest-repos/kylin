@@ -49,6 +49,7 @@ public class KylinConfigTest extends HotLoadKylinPropertiesTestCase {
         assertEquals(2, override.size());
         assertEquals("test1", override.get("test1"));
         assertEquals("test2", override.get("test2"));
+        System.out.println("kylin.test.bcc.old.key: " + config.getOptional("kylin.test.bcc.old.key"));
     }
 
     @Test

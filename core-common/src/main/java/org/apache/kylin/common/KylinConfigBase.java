@@ -99,7 +99,7 @@ public abstract class KylinConfigBase implements Serializable {
 
     public KylinConfigBase(Properties props) {
         this.properties = BCC.check(props);
-        ConfigTracker.injectConfig((arg1, arg2) -> props.put(arg1, (String) arg2));
+        ConfigTracker.injectConfig((arg1, arg2) -> this.properties.setProperty(arg1, (String) arg2));
     }
 
     protected KylinConfigBase(Properties props, boolean force) {
@@ -270,7 +270,7 @@ public abstract class KylinConfigBase implements Serializable {
     final protected void reloadKylinConfig(Properties properties) {
         this.properties = BCC.check(properties);
         setProperty("kylin.metadata.url.identifier", getMetadataUrlPrefix());
-        ConfigTracker.injectConfig((arg1, arg2) -> properties.put(arg1, (String) arg2));
+        ConfigTracker.injectConfig((arg1, arg2) -> this.properties.setProperty(arg1, (String) arg2));
     }
 
     private Map<Integer, String> convertKeyToInteger(Map<String, String> map) {
