@@ -35,6 +35,7 @@ import java.util.TimeZone;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import edu.illinois.ConfigTracker;
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.lang.text.StrSubstitutor;
 import org.apache.hadoop.conf.Configuration;
@@ -98,6 +99,7 @@ public abstract class KylinConfigBase implements Serializable {
 
     public KylinConfigBase(Properties props) {
         this.properties = BCC.check(props);
+        ConfigTracker.injectConfig((arg1, arg2) -> props.put(arg1, (String) arg2));
     }
 
     protected KylinConfigBase(Properties props, boolean force) {
@@ -259,6 +261,7 @@ public abstract class KylinConfigBase implements Serializable {
      */
     final public void setProperty(String key, String value) {
         logger.info("Kylin Config was updated with {} : {}", key, value);
+        ConfigTracker.markParamAsSet(key);
         properties.setProperty(BCC.check(key), value);
     }
 
