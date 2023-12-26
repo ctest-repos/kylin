@@ -18,6 +18,11 @@
 
 package org.apache.kylin.common.metrics.metrics2;
 
+import org.junit.runner.RunWith;
+import edu.illinois.CTestJUnit4Runner2;
+import edu.illinois.CTestClass;
+import edu.illinois.CTest;
+
 import com.codahale.metrics.Counter;
 import com.codahale.metrics.Gauge;
 import com.codahale.metrics.Histogram;
@@ -49,6 +54,8 @@ import static org.mockito.Mockito.when;
  * Modified from https://github.com/joshelser/dropwizard-hadoop-metrics2, Copyright by Josh Elser
  * Tests for {@link HadoopMetrics2Reporter}.
  */
+@RunWith(CTestJUnit4Runner2.class)
+@CTestClass()
 public class HadoopMetrics2ReporterTest {
 
     private MetricRegistry mockRegistry;

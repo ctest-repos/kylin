@@ -18,6 +18,11 @@
 
 package org.apache.kylin.common.util;
 
+import org.junit.runner.RunWith;
+import edu.illinois.CTestJUnit4Runner2;
+import edu.illinois.CTestClass;
+import edu.illinois.CTest;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -29,6 +34,8 @@ import org.junit.Ignore;
 import org.junit.Test;
 
 @Ignore("convenient trial tool for dev")
+@RunWith(CTestJUnit4Runner2.class)
+@CTestClass()
 public class MailServiceTest extends LocalFileMetadataTestCase {
 
     @Before

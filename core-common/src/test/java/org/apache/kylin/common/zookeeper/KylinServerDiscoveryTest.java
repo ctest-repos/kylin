@@ -17,6 +17,11 @@
  */
 package org.apache.kylin.common.zookeeper;
 
+import org.junit.runner.RunWith;
+import edu.illinois.CTestJUnit4Runner2;
+import edu.illinois.CTestClass;
+import edu.illinois.CTest;
+
 import java.util.Collection;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -42,6 +47,8 @@ import org.apache.kylin.shaded.com.google.common.collect.Lists;
 
 /**
  */
+@RunWith(CTestJUnit4Runner2.class)
+@CTestClass()
 public class KylinServerDiscoveryTest extends LocalFileMetadataTestCase {
 
     private static final Logger logger = LoggerFactory.getLogger(KylinServerDiscoveryTest.class);

@@ -19,6 +19,11 @@
 
 package org.apache.kylin.common.util;
 
+import org.junit.runner.RunWith;
+import edu.illinois.CTestJUnit4Runner2;
+import edu.illinois.CTestClass;
+import edu.illinois.CTest;
+
 import java.net.Inet4Address;
 import java.net.Inet6Address;
 import java.net.InetAddress;
@@ -26,6 +31,8 @@ import java.net.InetAddress;
 import org.junit.Assert;
 import org.junit.Test;
 
+@RunWith(CTestJUnit4Runner2.class)
+@CTestClass()
 public class ToolUtilTest {
 
     @Test

@@ -18,6 +18,11 @@
 
 package org.apache.kylin.common.util;
 
+import org.junit.runner.RunWith;
+import edu.illinois.CTestJUnit4Runner2;
+import edu.illinois.CTestClass;
+import edu.illinois.CTest;
+
 import org.junit.Test;
 
 import java.util.LinkedList;
@@ -33,6 +38,8 @@ import static org.junit.Assert.assertTrue;
  * @see SumHelper
  *
  */
+@RunWith(CTestJUnit4Runner2.class)
+@CTestClass()
 public class SumHelperTest{
 
   @Test

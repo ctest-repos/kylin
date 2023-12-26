@@ -18,6 +18,11 @@
 
 package org.apache.kylin.common.util;
 
+import org.junit.runner.RunWith;
+import edu.illinois.CTestJUnit4Runner2;
+import edu.illinois.CTestClass;
+import edu.illinois.CTest;
+
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -27,6 +32,8 @@ import org.apache.kylin.shaded.com.google.common.collect.Range;
 /**
  */
 @SuppressWarnings({ "rawtypes", "unchecked" })
+@RunWith(CTestJUnit4Runner2.class)
+@CTestClass()
 public class RangeTest {
 
     @Test

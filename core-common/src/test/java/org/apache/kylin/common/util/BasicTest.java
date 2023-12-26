@@ -18,6 +18,11 @@
 
 package org.apache.kylin.common.util;
 
+import org.junit.runner.RunWith;
+import edu.illinois.CTestJUnit4Runner2;
+import edu.illinois.CTestClass;
+import edu.illinois.CTest;
+
 import java.nio.ByteBuffer;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -51,6 +56,8 @@ import org.apache.kylin.shaded.com.google.common.collect.Maps;
  */
 @Ignore("convenient trial tool for dev")
 @SuppressWarnings("unused")
+@RunWith(CTestJUnit4Runner2.class)
+@CTestClass()
 public class BasicTest {
     protected static final org.slf4j.Logger logger = LoggerFactory.getLogger(BasicTest.class);
     public static int counter = 1;

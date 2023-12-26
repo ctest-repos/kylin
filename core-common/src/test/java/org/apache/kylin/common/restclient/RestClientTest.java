@@ -18,6 +18,11 @@
 
 package org.apache.kylin.common.restclient;
 
+import org.junit.runner.RunWith;
+import edu.illinois.CTestJUnit4Runner2;
+import edu.illinois.CTestClass;
+import edu.illinois.CTest;
+
 import java.io.IOException;
 
 import org.apache.kylin.common.util.LocalFileMetadataTestCase;
@@ -25,6 +30,8 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+@RunWith(CTestJUnit4Runner2.class)
+@CTestClass()
 public class RestClientTest extends LocalFileMetadataTestCase {
 
     @Before

@@ -18,6 +18,11 @@
 
 package org.apache.kylin.common.util;
 
+import org.junit.runner.RunWith;
+import edu.illinois.CTestJUnit4Runner2;
+import edu.illinois.CTestClass;
+import edu.illinois.CTest;
+
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -31,6 +36,8 @@ import java.nio.charset.StandardCharsets;
  * @author zhaoliu4
  * @date 2022/11/9
  */
+@RunWith(CTestJUnit4Runner2.class)
+@CTestClass()
 public class RingBufferTest {
     @Test
     public void test() throws IOException {

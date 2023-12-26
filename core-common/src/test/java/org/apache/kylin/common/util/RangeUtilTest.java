@@ -18,6 +18,11 @@
 
 package org.apache.kylin.common.util;
 
+import org.junit.runner.RunWith;
+import edu.illinois.CTestJUnit4Runner2;
+import edu.illinois.CTestClass;
+import edu.illinois.CTest;
+
 import java.util.List;
 import java.util.Map;
 import java.util.NavigableMap;
@@ -32,6 +37,8 @@ import org.apache.kylin.shaded.com.google.common.collect.Sets;
 
 /**
  */
+@RunWith(CTestJUnit4Runner2.class)
+@CTestClass()
 public class RangeUtilTest {
     @Test
     public void testFilter() {

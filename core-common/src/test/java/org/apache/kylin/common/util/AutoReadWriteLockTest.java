@@ -18,6 +18,11 @@
 
 package org.apache.kylin.common.util;
 
+import org.junit.runner.RunWith;
+import edu.illinois.CTestJUnit4Runner2;
+import edu.illinois.CTestClass;
+import edu.illinois.CTest;
+
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 import org.apache.kylin.common.util.AutoReadWriteLock.AutoLock;
@@ -25,6 +30,8 @@ import org.junit.Assert;
 import org.junit.Test;
 
 
+@RunWith(CTestJUnit4Runner2.class)
+@CTestClass()
 public class AutoReadWriteLockTest {
     
     @Test

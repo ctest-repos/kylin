@@ -18,6 +18,11 @@
 
 package org.apache.kylin.common.util;
 
+import org.junit.runner.RunWith;
+import edu.illinois.CTestJUnit4Runner2;
+import edu.illinois.CTestClass;
+import edu.illinois.CTest;
+
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -28,6 +33,8 @@ import static org.junit.Assert.assertEquals;
  * @see StringSplitter
  *
  */
+@RunWith(CTestJUnit4Runner2.class)
+@CTestClass()
 public class StringSplitterTest{
 
   @Test

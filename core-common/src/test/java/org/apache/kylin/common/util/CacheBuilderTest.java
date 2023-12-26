@@ -18,6 +18,11 @@
 
 package org.apache.kylin.common.util;
 
+import org.junit.runner.RunWith;
+import edu.illinois.CTestJUnit4Runner2;
+import edu.illinois.CTestClass;
+import edu.illinois.CTest;
+
 import org.junit.Test;
 
 import org.apache.kylin.shaded.com.google.common.cache.Cache;
@@ -25,6 +30,8 @@ import org.apache.kylin.shaded.com.google.common.cache.CacheBuilder;
 import org.apache.kylin.shaded.com.google.common.cache.RemovalListener;
 import org.apache.kylin.shaded.com.google.common.cache.RemovalNotification;
 
+@RunWith(CTestJUnit4Runner2.class)
+@CTestClass()
 public class CacheBuilderTest {
     @Test
     public void foo() {

@@ -18,6 +18,11 @@
 
 package org.apache.kylin.common.util;
 
+import org.junit.runner.RunWith;
+import edu.illinois.CTestJUnit4Runner2;
+import edu.illinois.CTestClass;
+import edu.illinois.CTest;
+
 import static org.junit.Assert.assertArrayEquals;
 
 import java.util.Comparator;
@@ -29,6 +34,8 @@ import org.apache.kylin.shaded.com.google.common.collect.Lists;
 
 /**
  */
+@RunWith(CTestJUnit4Runner2.class)
+@CTestClass()
 public class PartialSorterTest {
     @Test
     public void basicTest() {

@@ -18,6 +18,11 @@
 
 package org.apache.kylin.common.persistence;
 
+import org.junit.runner.RunWith;
+import edu.illinois.CTestJUnit4Runner2;
+import edu.illinois.CTestClass;
+import edu.illinois.CTest;
+
 import org.apache.kylin.shaded.com.google.common.collect.Lists;
 import org.apache.commons.io.FileUtils;
 import org.apache.kylin.common.KylinConfig;
@@ -32,6 +37,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.NavigableSet;
 
+@RunWith(CTestJUnit4Runner2.class)
+@CTestClass()
 public class ResourceToolTest extends LocalFileMetadataTestCase {
     private static final String dstPath = "../examples/test_metadata2/";
     private static final File DIR_1 = new File(LocalFileMetadataTestCase.LOCALMETA_TEST_DATA + ResourceStore.EXECUTE_RESOURCE_ROOT);
